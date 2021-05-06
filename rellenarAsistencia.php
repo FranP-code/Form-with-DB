@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="title">Rellenar estudiante</title>
+    <title id="title">Asistencia</title>
     <link rel="stylesheet" href="./estilos.css">
     <link rel="stylesheet" href="./normalize.css">
     <script src="script.js"></script>
@@ -18,16 +18,19 @@
 <body>
     <header >
         <div class="header-links">
-            <a style="color:rgb(131, 145, 156);">Estudiante</a>
-            <a href="./rellenarAsistencia.php" id="asistencia-link">Asistencia</a>
-            <a href="./rellenarLibro.php" id="libro-link">Libro</a>
-            <a href="./rellenarCurso.php" id="curso-link">Curso</a>
+            
+            <a href="./rellenarEstudiante.php">Estudiante</a>
+            <a style="color:rgb(131, 145, 156);">Asistencia</a>
+            <a href="./rellenarLibro.php">Libro</a>
+            <a href="./rellenarCurso.php">Curso</a>
         </div>
     </header>
     <div class="form-container">
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="form">
-            <input type="text" placeholder="Nombre" name="name" class="input-1" id="name">
-            <input type="number" placeholder="DNI" name="dni" class="input-2 no-arrow" id="dni">
+            <input type="date" timezone="" placeholder="Seleccionar fecha" name="" class="input-1" id="today" >
+            <input type="" placeholder="" name="" class="input-2" id="">
+            <input type="" placeholder="" name="" class="input-3" id="">
+            <input type="" placeholder="" name="" class="input-4" id="">
             <input type="submit" value="Send" name="submit" class="submit" id="submit">
         </form>
     </div>
