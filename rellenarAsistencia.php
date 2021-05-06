@@ -27,10 +27,14 @@
     </header>
     <div class="form-container">
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="form">
-            <input type="date" timezone="" placeholder="Seleccionar fecha" name="" class="input-1" id="today" >
-            <input type="" placeholder="" name="" class="input-2" id="">
-            <input type="" placeholder="" name="" class="input-3" id="">
-            <input type="" placeholder="" name="" class="input-4" id="">
+            <input type="date" timezone="" placeholder="MM/DD/YY" name="" class="input-1" id="today"  required>
+            <select class="input-2" required>
+                <option>Seleccionar preceptora</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
             <input type="submit" value="Send" name="submit" class="submit" id="submit">
         </form>
     </div>

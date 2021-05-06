@@ -26,8 +26,8 @@
     </header>
     <div class="form-container">
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="form">
-            <input type="text" placeholder="Nombre" name="name" class="input-1" id="name">
-            <input type="number" placeholder="DNI" name="dni" class="input-2 no-arrow" id="dni">
+            <input type="text" placeholder="Nombre" name="name" class="input-1" id="name" required>
+            <input type="number" placeholder="DNI" name="dni" class="input-2 no-arrow" id="dni" required> 
             <input type="submit" value="Send" name="submit" class="submit" id="submit">
         </form>
     </div>

@@ -26,8 +26,8 @@
     </header>
     <div class="form-container">
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="form">
-            <input type="number" placeholder="ID de clase" name="id" class="input-1 no-arrow" id="id">
-            <select type="range" placeholder="Seleccione un año" name="year" class="input-2" id="">
+            <input type="number" placeholder="ID de clase" name="id" class="input-1 no-arrow" id="id" required>
+            <select type="range" placeholder="Seleccione un año" name="year" class="input-2" id="" required>
                 <option>- SELECCIONE UNA OPCION -</option>
                 <option>1º</option>
                 <option>2º</option>
@@ -36,7 +36,7 @@
                 <option>5º</option>
                 <option>6º</option>
             </select>
-            <select type="range" placeholder="Seleccione un año" name="year" class="input-3" id="">
+            <select type="range" placeholder="Seleccione un año" name="year" class="input-3" id="" required>
                 <option>- SELECCIONE UNA OPCION -</option>
                 <option>1ra</option>
                 <option>2da</option>
