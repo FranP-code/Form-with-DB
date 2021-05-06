@@ -17,15 +17,15 @@
 <body>
     <header >
         <div class="header-links">
-            <a href="./rellenarEstudiante.php">Estudiante</a>
+            <a style="color: grey">Estudiante</a>
             <a href="./rellenarAsistencia.php">Asistencia</a>
-            <a href="./rellenarLibro">Libro</a>
-            <a href="./rellenarCurso">Curso</a>
+            <a href="./rellenarLibro.php">Libro</a>
+            <a href="./rellenarCurso.php">Curso</a>
         </div>
     </header>
     <div class="form-container">
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="form">
-            <input type="text" placeholder="Name" name="name" class="name" id="name">
+            <input type="text" placeholder="Nombre" name="name" class="name" id="name">
             <input type="number" placeholder="DNI" name="dni" class="email" id="dni">
             <input type="submit" value="Send" name="submit" class="submit" id="submit">
         </form>
