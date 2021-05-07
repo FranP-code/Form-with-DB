@@ -28,25 +28,41 @@
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="form">
             <input type="number" placeholder="ID de clase" name="id" class="input-1 no-arrow" id="id" required>
             <select type="range" placeholder="Seleccione un año" name="year" class="input-2" id="" required>
-                <option>- SELECCIONE UNA OPCION -</option>
-                <option>1º</option>
-                <option>2º</option>
-                <option>3º</option>
-                <option>4º</option>
-                <option>5º</option>
-                <option>6º</option>
+                <option value="">- Seleccione una opcion -</option>
+                <option value="1">1º</option>
+                <option value="2">2º</option>
+                <option value="3">3º</option>
+                <option value="4">4º</option>
+                <option value="5">5º</option>
+                <option value="6">6º</option>
             </select>
-            <select type="range" placeholder="Seleccione un año" name="year" class="input-3" id="" required>
-                <option>- SELECCIONE UNA OPCION -</option>
-                <option>1ra</option>
-                <option>2da</option>
-                <option>3era</option>
-                <option>4era</option>
-                <option>Economia</option>
-                <option>Sociales</option>
-                <option>Artes</option>
+            <select type="range" placeholder="Seleccione un año" name="divison" class="input-3" id="" required>
+                <option value="">- Seleccione una opcion -</option>
+                <option value="1">1ra</option>
+                <option value="2">2da</option>
+                <option value="3">3era</option>
+                <option value="4">4era</option>
+                <option value="Eco">Economia</option>
+                <option value="Soc">Sociales</option>
+                <option value="Art">Artes</option>
             </select>
             <input type="submit" value="Send" name="submit" class="submit" id="submit">
         </form>
     </div>
+    <?php 
+
+    require 'backEnd.php';
+
+    if (comprobacionEnvio()) {
+        metodoEnvio();
+
+        if (notEmpty($_POST['id']) && notEmpty($_POST['year']) && notDefault($_POST['year']) && notEmpty($_POST['divison']) && notDefault($_POST['divison'])){
+            echo $valid;
+    
+        } else {
+            echo $invalid;
+        }
+    }
+    
+    ?>
 </html>

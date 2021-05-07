@@ -31,4 +31,21 @@
             <input type="submit" value="Send" name="submit" class="submit" id="submit">
         </form>
     </div>
+    <?php 
+
+        require 'backEnd.php';
+
+        if (comprobacionEnvio()) {
+            metodoEnvio();
+
+            if (notEmpty($_POST['name']) && notEmpty($_POST['dni'])){
+                sanitizeText($_POST['name']);
+                echo $valid;
+
+            } else {
+                echo $invalid;
+            }
+        }
+
+    ?>
 </html>

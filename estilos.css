@@ -79,13 +79,28 @@ input:focus {
     color: #0000007a;
 }
 
+.submit:active {
+   transform: translate(0px, 5px) ;
+   -webkit-transform: translate(0px, 5px) ;
+   -moz-transform: translate(0px, 5px) ;
+   -ms-transform: translate(0px, 5px) ;
+   -o-transform: translate(0px, 5px) ;
+}
+
 body {
     background-color: #111d33;
 }
 
 h2 {
     font-family: Arial, Helvetica, sans-serif;
-    color: #ff0e0e;
+}
+
+.valid {
+    color: #16ff0e;
+}
+
+.invalid {
+    color:#e2500d;
 }
 
 header {
@@ -106,7 +121,7 @@ a {
     -ms-transition: color ease-in 0.3s;
     -o-transition: color ease-in 0.3s;
     font-size: 35px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
     text-decoration: none;
     user-select: none;
