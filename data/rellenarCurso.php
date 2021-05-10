@@ -1,9 +1,3 @@
-<?php
-
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="title">Curso</title>
-    <link rel="stylesheet" href="./estilos.css">
-    <link rel="stylesheet" href="./normalize.css">
+    <link rel="stylesheet" href="../estilos.css">
+    <link rel="stylesheet" href="../normalize.css">
     <script src="script.js"></script>
 </head>
 <body>
@@ -36,7 +30,7 @@
                 <option value="5">5º</option>
                 <option value="6">6º</option>
             </select>
-            <select type="range" placeholder="Seleccione un año" name="divison" class="input-3" id="" required>
+            <select type="range" placeholder="Seleccione un año" name="division" class="input-3" id="" required>
                 <option value="">- Seleccione una opcion -</option>
                 <option value="1">1ra</option>
                 <option value="2">2da</option>
@@ -49,20 +43,48 @@
             <input type="submit" value="Send" name="submit" class="submit" id="submit">
         </form>
     </div>
-    <?php 
+    <?php
 
-    require 'backEnd.php';
+    require '../backEnd.php';
+    require '../conexionMySQL.php';
 
-    if (comprobacionEnvio()) {
-        metodoEnvio();
-
-        if (notEmpty($_POST['id']) && notEmpty($_POST['year']) && notDefault($_POST['year']) && notEmpty($_POST['divison']) && notDefault($_POST['divison'])){
-            echo $valid;
+    function comprobacionEnvioCustom() {
+        if (comprobacionEnvio($_POST['id']) && comprobacionEnvio($_POST['year']) && comprobacionEnvio($_POST['division']) && comprobacionEnvio($_POST['submit'])) {
+            return true;
+            
+        }
+    }
     
+    
+    function envio_datos($conect) {
+        $agregarDatos = $conect -> prepare('insert into curso (id, año, division) values (?, ?, ?)');
+        echo 'paso 1';
+        $agregarDatos -> bindParam(1, $_POST['id'], PDO::PARAM_STR /* Aca poner tipo de dato esperado*/);
+        echo 'paso 2';
+        $agregarDatos -> bindParam(2, $_POST['year'], PDO::PARAM_STR /* Aca poner tipo de dato esperado*/);
+        echo 'paso 3';
+        $agregarDatos -> bindParam(3, $_POST['division'], PDO::PARAM_STR /* Aca poner tipo de dato esperado*/);
+        echo 'paso 4';
+        $agregarDatos -> execute();
+        echo 'paso final';   
+        
+    }
+    
+    if ($_POST['submit']) {
+        if (comprobacionEnvioCustom() && checkType($_POST['id'], 'string') && checkType($_POST['year'], 'string') && checkType($_POST['division'], 'string')) {
+            echo $valid;
+            sanitizeText($_POST['id']);
+            sanitizeText($_POST['year']);
+            sanitizeText($_POST['division']);
+            envio_datos($conexion);
         } else {
             echo $invalid;
         }
     }
-    
+
+    if ($_POST['submit']) {
+
+    }
+
     ?>
 </html>

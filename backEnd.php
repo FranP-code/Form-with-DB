@@ -1,8 +1,7 @@
 <?php
-    error_reporting(0);
 
-function comprobacionEnvio() {
-    if (isset($_POST['submit'])) {
+function comprobacionEnvio($a) {
+    if (isset($a)) {
         return true;
     }
 }
@@ -23,11 +22,10 @@ function notEmpty($a) {
     if (empty($a)) {
         return false;
         $a = "n";
-    }
-
-    if ($a != "n"){
+    } else {
         return true;
     }
+
 }
 
 function notDefault($a) {
@@ -46,7 +44,18 @@ function sanitizeText($a) {
     return $b;
 }
 
+function sanitizeNumbers($a) {
+    $b = filter_var($a,  FILTER_SANITIZE_NUMBER_INT);
+}
+
+function checkType ($data, $type) {
+    if (gettype($data) == $type) {
+        return true;
+    }
+}
+
 $valid = '<h2 class="valid">El formulario se acepto con exito!</h2>';
 $invalid = '<h2 class="invalid">El formulario no ha sido aceptado. Por favor reviselo</h2>';
 
 ?>
+

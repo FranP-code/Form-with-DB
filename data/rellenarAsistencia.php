@@ -12,8 +12,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="title">Asistencia</title>
-    <link rel="stylesheet" href="./estilos.css">
-    <link rel="stylesheet" href="./normalize.css">
+    <link rel="stylesheet" href="../estilos.css">
+    <link rel="stylesheet" href="../normalize.css">
     <script src="script.js"></script>
 </head>
 <body>
@@ -40,21 +40,38 @@
     </div>
     <?php 
 
+    require '../backEnd.php';
+    require '../conexionMySQL.php';
 
-    require 'backEnd.php';
-    
-    if (comprobacionEnvio()) {
-        metodoEnvio();
-
-        if (notEmpty($_POST['day']) && notEmpty($_POST['preceptora']) && notDefault($_POST['preceptora'])){
-            echo $valid;
-    
-        } else {
-            echo $invalid;
+    function comprobacionEnvioCustom() {
+        if (comprobacionEnvio($_POST['day']) && comprobacionEnvio($_POST['preceptora']) && comprobacionEnvio($_POST['submit'])) {
+            return true;
+            
         }
     }
 
+    function envio_datos($conect) {
+        $agregarDatos = $conect -> prepare('insert into asistencia (dia, preceptora) values (?, ?)');
+        echo 'paso 1';
+        $agregarDatos -> bindParam(1, $_POST['day'], PDO::PARAM_STR /* Aca poner tipo de dato esperado*/);
+        echo 'paso 2';
+        $agregarDatos -> bindParam(2, $_POST['preceptora'], PDO::PARAM_STR /* Aca poner tipo de dato esperado*/);
+        echo 'paso 3';
+        $agregarDatos -> execute();
+        echo 'paso final';   
+        
+    }
 
-    
+    if ($_POST['submit']) {
+        if (comprobacionEnvioCustom() && checkType($_POST['day'], 'string') && checkType($_POST['preceptora'], 'string')) {
+            echo $valid;
+            sanitizeText($_POST['day']);
+            sanitizeText($_POST['preceptora']);
+            envio_datos($conexion);
+        } else {
+            echo $invalid;
+        }
+}
+
     ?>
 </html>
