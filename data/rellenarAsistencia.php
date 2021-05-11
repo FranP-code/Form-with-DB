@@ -50,10 +50,11 @@
         }
     }
 
-    function envio_datos($conect) {
-        $agregarDatos = $conect -> prepare('insert into asistencia (dia, preceptora) values (?, ?)');
+    function envio_datos($connect) {
+        $agregarDatos = $connect -> prepare('insert into asistencia (dia, preceptora) values (?, ?)');
         echo 'paso 1';
         $agregarDatos -> bindParam(1, $_POST['day'], PDO::PARAM_STR /* Aca poner tipo de dato esperado*/);
+        echo $_POST['day'];
         echo 'paso 2';
         $agregarDatos -> bindParam(2, $_POST['preceptora'], PDO::PARAM_STR /* Aca poner tipo de dato esperado*/);
         echo 'paso 3';

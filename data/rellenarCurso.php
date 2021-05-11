@@ -35,7 +35,7 @@
                 <option value="1">1ra</option>
                 <option value="2">2da</option>
                 <option value="3">3era</option>
-                <option value="4">4era</option>
+                <option value="4">4ta</option>
                 <option value="Eco">Economia</option>
                 <option value="Soc">Sociales</option>
                 <option value="Art">Artes</option>
@@ -56,8 +56,8 @@
     }
     
     
-    function envio_datos($conect) {
-        $agregarDatos = $conect -> prepare('insert into curso (id, año, division) values (?, ?, ?)');
+    function envio_datos($connect) {
+        $agregarDatos = $connect -> prepare('insert into curso (id, año, division) values (?, ?, ?)');
         echo 'paso 1';
         $agregarDatos -> bindParam(1, $_POST['id'], PDO::PARAM_STR /* Aca poner tipo de dato esperado*/);
         echo 'paso 2';
@@ -81,10 +81,5 @@
             echo $invalid;
         }
     }
-
-    if ($_POST['submit']) {
-
-    }
-
     ?>
 </html>
