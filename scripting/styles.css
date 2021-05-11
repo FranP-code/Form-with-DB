@@ -1,0 +1,37 @@
+.form input, .form button{
+    display: flex;
+}
+
+body {
+    background-color: #111d33;
+}
+
+.grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+}
+
+.titles {
+    display: flex;
+    justify-content: space-around;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+
+}
+
+.input-block {
+    display: flex;
+    justify-content: space-around;
+}
+
+header {
+    background-color: #0e93ff67;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+
+}
