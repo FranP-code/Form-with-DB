@@ -1,5 +1,7 @@
 <?php
 
+use function PHPSTORM_META\type;
+
 require 'palabras.php';
 require 'funciones.php';
 
@@ -111,6 +113,37 @@ function generarCursos() {
 
 //! LIBRO
 
-$idL = 0;
+function generarLibros($cantidad) {
+    require '../conexionMySQL.php';
+    require './palabras.php';
 
+    if($librosEnBD) {
+        $conexion -> query('delete from libro');
+    }
+
+    if($cantidad <= 38) {
+        for ($i=0; $i < $cantidad;) { 
+            $idL = random_int(0, 36);
+            $title = $librosStock[random_int(0, 10)];
+            $amount = random_int(0, 100);
+
+            if (in_array($title, $titleHistory) || in_array($idL, $idLHistory) ) {
+
+            } else {
+                introducirLibroBD($conexion, $idL, $title, $amount);    
+                array_push($titleHistory, $title);
+                array_push($idLHistory, $idL);
+                $i++;
+                }
+            }
+        } else {
+            echo 'ERROR, MUCHOS LIBROS SOLICITADOS';
+
+    }
+    $titleHistory = array();
+
+}
+
+// * ACA para generar los libros...
+//todo generarLibros();
 ?>

@@ -6,4 +6,6 @@ try {
 	    echo "Error: " . $e -> getMessage();
     }
 
+$librosEnBD = $conexion -> query('select * from libro');
+
 ?>

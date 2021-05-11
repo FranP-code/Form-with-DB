@@ -136,6 +136,11 @@ $division = array('1ra', '2da', '3era', '4ta', 'Economia', 'Sociales', 'Arte');
 $divisionReduced = array('Economia', 'Sociales', 'Arte');
 $cicloSupOInf = null;
 
+//! LIBROS ARRAYS
+
+$titleHistory = array();
+
+$idLHistory = array();
 
 
 ?>

@@ -40,4 +40,17 @@ function introducirCursoBD ($connect, $id, $year, $division){
     
 }
 
+function introducirLibroBD ($connect, $id, $title, $amount) {
+    $agregarDatos = $connect -> prepare('insert into libro (id_libro, titulo, cantidad) values (?, ?, ?)');
+    //echo 'paso 1';
+    $agregarDatos -> bindParam(1, $id, PDO::PARAM_STR /* Aca poner tipo de dato esperado*/);
+    //echo 'paso 2';
+    $agregarDatos -> bindParam(2, $title, PDO::PARAM_STR /* Aca poner tipo de dato esperado*/);
+    //echo 'paso 3';
+    $agregarDatos -> bindParam(3, $amount, PDO::PARAM_STR /* Aca poner tipo de dato esperado*/);
+    //echo 'paso 4';
+    $agregarDatos -> execute();
+    //echo 'paso final';   
+}
+
 ?>
