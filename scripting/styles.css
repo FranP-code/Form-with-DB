@@ -1,30 +1,160 @@
-.form input, .form button{
+.flex-container {
     display: flex;
+    justify-content: space-around;
+    text-align:center;
+
 }
+
+.flex-item {
+    /* background-color: rgb(255, 0, 0);  Identificador de item*/
+    display: inline;
+    text-align:center;
+    width: 300px;
+}
+
+.flex-item input {
+    width: 25%;
+    height: 40px;
+    background-color: rgb(200, 200, 200, 0.5);
+    color: #35383D;
+    border: none;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt;
+    user-select: none;
+}
+
+.checkbox {
+    width: 70px;
+    height: 70px;
+    margin: auto;
+
+}
+/*
+
+HOVERING
+
+*/
+
+#asistencias {
+    transition: color ease-out 0.3s;
+    color: white;
+    -webkit-transition: color ease-out 0.3s;
+    -moz-transition: color ease-out 0.3s;
+    -ms-transition: color ease-out 0.3s;
+    -o-transition: color ease-out 0.3s;
+}
+
+#asistencias:hover {
+    transition: color ease-in 0.3s;
+    color: #62FA0C;
+    -webkit-transition: color ease-in 0.3s;
+    -moz-transition: color ease-in 0.3s;
+    -ms-transition: color ease-in 0.3s;
+    -o-transition: color ease-in 0.3s;
+}
+
+#estudiantes {
+    transition: color ease-out 0.3s;
+    color: white;
+    -webkit-transition: color ease-out 0.3s;
+    -moz-transition: color ease-out 0.3s;
+    -ms-transition: color ease-out 0.3s;
+    -o-transition: color ease-out 0.3s;
+}
+
+#estudiantes:hover {
+    transition: color ease-in 0.3s;
+    color: #faf600;
+    -webkit-transition: color ease-in 0.3s;
+    -moz-transition: color ease-in 0.3s;
+    -ms-transition: color ease-in 0.3s;
+    -o-transition: color ease-in 0.3s;
+}
+
+#libros {
+    color:white;
+    transition: color ease-out 0.3s;
+    -webkit-transition: color ease-out 0.3s;
+    -moz-transition: color ease-out 0.3s;
+    -ms-transition: color ease-out 0.3s;
+    -o-transition: color ease-out 0.3s;
+}
+
+#libros:hover {
+    color:#F819FA;
+    transition: color ease-in 0.3s;
+    -webkit-transition: color ease-in 0.3s;
+    -moz-transition: color ease-in 0.3s;
+    -ms-transition: color ease-in 0.3s;
+    -o-transition: color ease-in 0.3s;
+}
+
+#cursos {
+    color: white;
+    transition: color ease-out 0.3s;
+    -webkit-transition: color ease-out 0.3s;
+    -moz-transition: color ease-out 0.3s;
+    -ms-transition: color ease-out 0.3s;
+    -o-transition: color ease-out 0.3s;
+}
+
+#cursos:hover {
+    color: #FAC60C;
+    transition: color ease-in 0.3s;
+    -webkit-transition: color ease-in 0.3s;
+    -moz-transition: color ease-in 0.3s;
+    -ms-transition: color ease-in 0.3s;
+    -o-transition: color ease-in 0.3s;
+}
+
+/*
+
+
+
+*/
+
+.container-submit {
+    margin-top: 40px;
+    text-align: center;
+
+}
+
+.submit {
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    outline: none;
+    width: 120px;
+    height: 50px;
+    background-color: rgb(200, 200, 200, 0.5);
+    color: #35383D;
+
+}
+
+.submit:active {
+    transform: translate(0px, 5px) ;
+    -webkit-transform: translate(0px, 5px) ;
+    -moz-transform: translate(0px, 5px) ;
+    -ms-transform: translate(0px, 5px) ;
+    -o-transform: translate(0px, 5px) ;
+ }
+ 
 
 body {
     background-color: #111d33;
 }
 
-.grid-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-gap: 1rem;
-}
-
 .titles {
     display: flex;
     justify-content: space-around;
+}
+
+h2 {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
+    user-select: none;
 
-}
-
-.input-block {
-    display: flex;
-    justify-content: space-around;
-}
+}   
 
 header {
     background-color: #0e93ff67;
@@ -33,5 +163,14 @@ header {
     margin: auto;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
+    user-select: none;
 
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button,
+input[type=number] {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield; 
 }
