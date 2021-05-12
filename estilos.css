@@ -38,10 +38,14 @@ input:focus {
     color:rgb(20, 20, 20);
 }
 
-.no-arrow {
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button,
+input[type=number] {
     -webkit-appearance: none;
+    margin: 0;
     -moz-appearance: textfield; 
 }
+
 
 .input-3 {
     grid-column: 1/3;
