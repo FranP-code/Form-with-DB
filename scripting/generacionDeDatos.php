@@ -14,7 +14,7 @@ function generarAsistencia($numero) {
     require './palabras.php';
 
     for ($i=0; $i <= $numero; $i++) { 
-        $day = '2021' . '-' . strval(random_int(3, 12)) . '-' . strval(random_int(1, 30));
+        $day = strval(random_int(2014, 2020)) . '-' . strval(random_int(3, 12)) . '-' . strval(random_int(1, 30));
         
         $preceptora = random_int(1, 4);
 
