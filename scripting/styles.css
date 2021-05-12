@@ -29,7 +29,6 @@
     outline: none;
     font-family: 'Noto Sans', sans-serif;
     font-size: 15pt;
-    user-select: none;
     text-align: center;
     margin-bottom: 50px;
 }
@@ -187,10 +186,37 @@ header {
 
 }
 
+.valid {
+    color: #16ff0e;
+}
+
+.invalid {
+    color:#e2500d;
+}
+
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button,
 input[type=number] {
     -webkit-appearance: none;
     margin: 0;
     -moz-appearance: textfield; 
+}
+
+.log {
+    margin-left: 80px;
+    margin-top: 40px;
+    margin-right: 80px;
+    border: 1px solid #cccccc;
+}
+
+.log h2 {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.generator-message {
+    font-family: 'Noto Sans', sans-serif;
+    margin-left: 130px;
+    margin-top: 20px;
+    color: white;
 }

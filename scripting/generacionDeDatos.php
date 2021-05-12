@@ -4,24 +4,32 @@ use function PHPSTORM_META\type;
 
 require 'palabras.php';
 require 'funciones.php';
+require 'mensajes.php';
 
 
 //! ASISTENCIA
 
 function generarAsistencia($numero) {
     require '../conexionMySQL.php';
+    require './palabras.php';
 
     for ($i=0; $i <= $numero; $i++) { 
         $day = '2021' . '-' . strval(random_int(3, 12)) . '-' . strval(random_int(1, 30));
-        echo $day;
-        echo '<br>';
-
+        
         $preceptora = random_int(1, 4);
-        echo $preceptora;
-        echo '<br>';
 
-        introducirAsistenciaBD($day, $preceptora, $conexion);
+        if (in_array($day, $dayHistory)) {
+
+        } else {
+            introducirAsistenciaBD($day, $preceptora, $conexion);
+            array_push($dayHistory, $day);
+            $i++;
+            }
+        
+        
     }
+
+    echo success('Las asistencias');
 
 // * ACA para generar asistencias...
 //todo generarAsistencia(*cantidad*);
@@ -35,17 +43,24 @@ function generarEstudiante($numero) {
 
     for ($i=0; $i <= $numero; $i++) { 
         $dni = random_int(11111111, 99999999);
-        echo $dni;
-        echo '<br>';
 
         $name = $nombresStock[random_int(1, 77)];
-        echo $name;
-        echo '<br>';
 
-        introducirEstudianteBD($dni, $name, $conexion);
+        if (in_array($dni, $dniHistory)) {
+
+        } else {
+            introducirEstudianteBD($dni, $name, $conexion);   
+            array_push($dniHistory, $dni);
+            $i++;
+            }
+
+
     }
 
+    echo success('Los estudiantes');
 }
+
+    
 
 // * ACA para generar los estudiantes...
 //todo generarEstudiante(*cantidad*);
@@ -86,26 +101,20 @@ function generarCursos() {
         }
         
         for ($e=0; $e < $condicion; $e++) {
-            
-            echo $año[$i];
-            echo ' ';
+
             if ($cicloSupOInf) {
-                echo $divisionReduced[$e];
-                echo '  ID = ' . $idC;
+
                 introducirCursoBD ($conexion, $idC, $año[$i], $divisionReduced[$e]);
                 $idC++;  
             } else {
-                echo $division [$e];
-                echo '      ID = ' . $idC;
+
                 introducirCursoBD ($conexion, $idC, $año[$i], $division[$e]);
                 $idC++;  
             }
-            echo '<br>';
         }
-        echo '<br>';
-        echo '--------------';
-        echo '<br>';
+
     }
+    echo success('Los cursos');
 }
 
 // * ACA para generar los cursos...
@@ -136,8 +145,9 @@ function generarLibros($cantidad) {
                 $i++;
                 }
             }
+        echo success('Los libros');
         } else {
-            echo 'ERROR, MUCHOS LIBROS SOLICITADOS';
+            echo fail('Los libros', 'demasiados libros fueron solicitados');
 
     }
     $titleHistory = array();

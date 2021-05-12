@@ -127,6 +127,14 @@ $nombresStock = array(
 
 //* Fuente: https://www.conmishijos.com/nombres/
 
+//! ASISTENCIA ARRAYS
+
+$dayHistory = array();
+
+//! ESTUDIANTE ARRAYS
+
+$dniHistory = array();
+
 //! CURSO ARRAYS
 
 $año = array('1º', '2º', '3º', '4º', '5º', '6º');

@@ -24,23 +24,23 @@ require './generacionDeDatos.php';
                 <div class="flex-container">
                     <div class="flex-item">
                         <h2 id="asistencias">Cantidad de Asistencias</h2>
-                        <input type="number" class="no-arrow" id="asistencias-submit">
+                        <input type="number" class="no-arrow" id="asistencias-submit" name="asistencia" value="false">
                     </div>
                     <div class="flex-item">
                         <h2 id="estudiantes">Cantidad de Estudiantes</h2>
-                        <input type="number" class="no-arrow" id="estudiantes-submit">
+                        <input type="number" class="no-arrow" id="estudiantes-submit" name="estudiante" value="false"> 
                     </div>
                     <div class="flex-item">
                         <h2 id="libros">Cantidad de Libros</h2>
-                        <input type="number" class="no-arrow" id="libros-submit">
+                        <input type="number" class="no-arrow" id="libros-submit" name="libro" value="false">
                     </div>
                     <div class="flex-item">
                         <h2 id="cursos">Generar cursos?</h2>
-                        <input type="checkbox" class="checkbox">
+                        <input type="checkbox" class="checkbox" name="curso" value="true">
                     </div>
                 </div>
                 <div class="container-submit">
-                    <input type="submit" class="submit" value="Enviar">
+                    <input type="submit" class="submit" value="Enviar" name="submit">
                 </div>
             </form>
 </body>
