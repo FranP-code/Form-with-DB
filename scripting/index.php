@@ -13,6 +13,8 @@ require './generacionDeDatos.php';
     <title>Generacion de Datos</title>
     <link rel="stylesheet" href="./styles.css" >
     <link rel="stylesheet" href="../normalize.css" >
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <header>

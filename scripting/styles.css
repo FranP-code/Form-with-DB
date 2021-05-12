@@ -6,22 +6,32 @@
 }
 
 .flex-item {
-    /* background-color: rgb(255, 0, 0);  Identificador de item*/
+    /*background-color: rgb(255, 0, 0);
+    Identificadordeitem*/margin-top: 40px;
     display: inline;
     text-align:center;
     width: 300px;
+    border: #cccccc 1px solid;
+    background-color: #111d33;
+    transition: ease-out background-color 0.5s;
+    -webkit-transition: ease-out background-color 0.5s;
+    -moz-transition: ease-out background-color 0.5s;
+    -ms-transition: ease-out background-color 0.5s;
+    -o-transition: ease-out background-color 0.5s;
 }
 
 .flex-item input {
     width: 25%;
     height: 40px;
-    background-color: rgb(200, 200, 200, 0.5);
+    background-color: rgb(163, 163, 163);
     color: #35383D;
     border: none;
     outline: none;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 15pt;
     user-select: none;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
 .checkbox {
@@ -30,6 +40,7 @@
     margin: auto;
 
 }
+
 /*
 
 HOVERING
@@ -108,6 +119,15 @@ HOVERING
     -o-transition: color ease-in 0.3s;
 }
 
+.flex-item:hover {
+    background-color: #213966;
+    transition: ease-in background-color 0.5s;
+    -webkit-transition: ease-in background-color 0.5s;
+    -moz-transition: ease-in background-color 0.5s;
+    -ms-transition: ease-in background-color 0.5s;
+    -o-transition: ease-in background-color 0.5s;
+}
+
 /*
 
 
@@ -121,13 +141,13 @@ HOVERING
 }
 
 .submit {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     border: none;
     outline: none;
     width: 120px;
     height: 50px;
     background-color: rgb(200, 200, 200, 0.5);
-    color: #35383D;
+    color: white;
 
 }
 
@@ -150,10 +170,10 @@ body {
 }
 
 h2 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     color: white;
     user-select: none;
-
+    font-size: 17pt;
 }   
 
 header {
@@ -161,7 +181,7 @@ header {
     display: flex;
     justify-content: space-around;
     margin: auto;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     color: white;
     user-select: none;
 
