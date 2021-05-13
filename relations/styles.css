@@ -1,0 +1,99 @@
+body {
+    background-color: #345ca5;
+}
+
+header {
+    background-color: #36ff0e67;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    font-family: 'Noto Sans', sans-serif;
+    color: white;
+    user-select: none;
+
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+a {
+    text-decoration: none;
+}
+
+.select-page {
+    margin-top: 50px;
+    border: 1px solid #cccccc;
+    height: 600px;
+    width: 400px;
+    opacity: 20%;
+    text-decoration: none;
+    transition: opacity ease-out 0.8s;
+    -webkit-transition: opacity ease-out 0.8s;
+    -moz-transition: opacity ease-out 0.8s;
+    -ms-transition: opacity ease-out 0.8s;
+    -o-transition: opacity ease-out 0.8s;
+}
+
+/*
+
+HOVERING
+
+*/
+
+.estudiante-asistencia {
+    background: rgb(52,92,165);
+    background: linear-gradient(31deg, rgba(52,92,165,1) 0%, rgba(94,183,249,0.8519608527004552) 100%);
+}
+
+.estudiante-asistencia:hover {
+    opacity: 100%;
+    transform: scale(110%);
+    transition: opacity ease-in 0.8s;
+    /* transition: scale ease-in 0.2s(*/
+    background: rgb(52,92,165);
+    background: linear-gradient(31deg, rgba(52,92,165,1) 0%, rgba(94,183,249,0.8519608527004552) 100%);
+    -webkit-transition: opacity ease-in 0.8s;
+    -moz-transition: opacity ease-in 0.8s;
+    -ms-transition: opacity ease-in 0.8s;
+    -o-transition: opacity ease-in 0.8s;
+    -webkit-transform: scale(110%);
+    -moz-transform: scale(110%);
+    -ms-transform: scale(110%);
+    -o-transform: scale(110%);
+}
+
+.estudiante-curso {
+    background: rgb(52,92,165);
+    background: linear-gradient(31deg, rgba(52,92,165,1) 0%, #63fa0cb0 100%);
+}
+
+.estudiante-curso:hover {
+    opacity: 100%;
+    transition: opacity ease-in 0.8s;
+    background: rgb(52,92,165);
+    background: linear-gradient(31deg, rgba(52,92,165,1) 0%, #63fa0cb0 100%);
+}
+
+.estudiante-libro {
+    background: rgb(52,92,165);
+    background: linear-gradient(31deg, rgba(52,92,165,1) 0%, rgba(250, 246, 0, 0.76) 100%);
+}
+
+.estudiante-libro:hover {
+    opacity: 100%;
+    transition: opacity ease-in 0.8s;
+    background: rgb(52,92,165);
+    background: linear-gradient(31deg, rgba(52,92,165,1) 0%, rgba(250, 246, 0, 0.76) 100%);
+}
+
+h2 {
+    font-family: 'Noto Sans', sans-serif;
+    color: white;
+    user-select: none;
+    font-size: 24pt;
+    text-align: center;
+    margin-right: 20px; margin-left : 20px;
+    text-decoration: none;
+}

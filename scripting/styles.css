@@ -220,3 +220,8 @@ input[type=number] {
     margin-top: 20px;
     color: white;
 }
+
+.select_page {
+    border: 1px solid #cccccc;
+ 
+}
