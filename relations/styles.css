@@ -29,11 +29,11 @@ a {
     width: 400px;
     opacity: 20%;
     text-decoration: none;
-    transition: opacity ease-out 0.8s;
-    -webkit-transition: opacity ease-out 0.8s;
-    -moz-transition: opacity ease-out 0.8s;
-    -ms-transition: opacity ease-out 0.8s;
-    -o-transition: opacity ease-out 0.8s;
+    transition: opacity ease-out 0.6s;
+    -webkit-transition: opacity ease-out 0.6s;
+    -moz-transition: opacity ease-out 0.6s;
+    -ms-transition: opacity ease-out 0.6s;
+    -o-transition: opacity ease-out 0.6s;
 }
 
 /*
@@ -44,24 +44,18 @@ HOVERING
 
 .estudiante-asistencia {
     background: rgb(52,92,165);
-    background: linear-gradient(31deg, rgba(52,92,165,1) 0%, rgba(94,183,249,0.8519608527004552) 100%);
+    background: linear-gradient(31deg, rgba(52,92,165,1) 0%, rgba(94,183,249,0.6519608527004552) 100%);
 }
 
 .estudiante-asistencia:hover {
     opacity: 100%;
-    transform: scale(110%);
-    transition: opacity ease-in 0.8s;
-    /* transition: scale ease-in 0.2s(*/
+    transition: opacity ease-in 0.6s;
     background: rgb(52,92,165);
-    background: linear-gradient(31deg, rgba(52,92,165,1) 0%, rgba(94,183,249,0.8519608527004552) 100%);
-    -webkit-transition: opacity ease-in 0.8s;
-    -moz-transition: opacity ease-in 0.8s;
-    -ms-transition: opacity ease-in 0.8s;
-    -o-transition: opacity ease-in 0.8s;
-    -webkit-transform: scale(110%);
-    -moz-transform: scale(110%);
-    -ms-transform: scale(110%);
-    -o-transform: scale(110%);
+    background: linear-gradient(31deg, rgba(52,92,165,1) 0%, rgba(94,183,249,0.6519608527004552) 100%);
+    -webkit-transition: opacity ease-in 0.6s;
+    -moz-transition: opacity ease-in 0.6s;
+    -ms-transition: opacity ease-in 0.6s;
+    -o-transition: opacity ease-in 0.6s;
 }
 
 .estudiante-curso {
@@ -71,9 +65,13 @@ HOVERING
 
 .estudiante-curso:hover {
     opacity: 100%;
-    transition: opacity ease-in 0.8s;
+    transition: opacity ease-in 0.6s;
     background: rgb(52,92,165);
     background: linear-gradient(31deg, rgba(52,92,165,1) 0%, #63fa0cb0 100%);
+    -webkit-transition: opacity ease-in 0.6s;
+    -moz-transition: opacity ease-in 0.6s;
+    -ms-transition: opacity ease-in 0.6s;
+    -o-transition: opacity ease-in 0.6s;
 }
 
 .estudiante-libro {
@@ -83,9 +81,13 @@ HOVERING
 
 .estudiante-libro:hover {
     opacity: 100%;
-    transition: opacity ease-in 0.8s;
+    transition: opacity ease-in 0.6s;
     background: rgb(52,92,165);
     background: linear-gradient(31deg, rgba(52,92,165,1) 0%, rgba(250, 246, 0, 0.76) 100%);
+    -webkit-transition: opacity ease-in 0.6s;
+    -moz-transition: opacity ease-in 0.6s;
+    -ms-transition: opacity ease-in 0.6s;
+    -o-transition: opacity ease-in 0.6s;
 }
 
 h2 {
