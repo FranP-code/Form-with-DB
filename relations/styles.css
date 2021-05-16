@@ -130,12 +130,3 @@ h2 {
     margin-right: 20px; margin-left : 20px;
     text-decoration: none;
 }
-
-.header-relacion{
-    background-image: url(../media/Manners-Of-Hate-Tu-web-de-noticias-y-actualidad-de-heavy-.png);
-    height: 300px;
-    width: auto;
-    filter: blur(10px);
-    -webkit-filter: blur(10px);
-    opacity: 40%;
-}
