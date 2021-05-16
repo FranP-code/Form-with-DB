@@ -9,6 +9,18 @@ html {
     background: linear-gradient(31deg, rgba(52,92,165,1) 0%, rgba(94,183,249,0.6519608527004552) 100%);
 }
 
+#estudiante-curso_html {
+    height: 100%;
+    background: rgb(52,92,165);
+    background: linear-gradient(31deg, rgba(52,92,165,1) 0%, #63fa0cb0 100%);
+}
+
+#estudiante-libro_html {
+    height: 100%;
+    background: rgb(52,92,165);
+    background: linear-gradient(31deg, rgba(52,92,165,1) 0%, rgba(250, 246, 0, 0.76) 100%);
+}
+
 
 .header-relacion{
     width: auto;
@@ -99,8 +111,8 @@ input:focus {
 
 .input-yellow-1 {
     grid-column: 1/3;
-    background-color: #fffb0e99;
-    border: 1px solid #c7c400;
+    background-color: #d6d30f99;
+    border: 1px solid #c7c40091;
     height: 30px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14pt;
@@ -132,8 +144,8 @@ input[type=number] {
 
 .input-green-1 {
     grid-column: 1/3;
-    background-color: #2aff0e99;
-    border: 1px solid #22ff0e;
+    background-color: #3fb112b2;
+    border: 1px solid #27860a;
     color:rgb(20, 20, 20);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14pt;

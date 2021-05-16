@@ -141,7 +141,7 @@ $año = array('1º', '2º', '3º', '4º', '5º', '6º');
 $division = array('1ra', '2da', '3era', '4ta', 'Economia', 'Sociales', 'Arte');
 
 
-$divisionReduced = array('Economia', 'Sociales', 'Arte');
+$divisionReduced = array('Arte', 'Economia', 'Sociales');
 $cicloSupOInf = null;
 
 //! LIBROS ARRAYS
