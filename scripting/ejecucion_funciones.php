@@ -2,7 +2,9 @@
 
 require './generacionDeDatos.php';
 
-error_reporting(0);
+$conexion -> query('delete from estudiante_asistencia');
+$conexion -> query('delete from estudiante_curso');
+$conexion -> query('delete from estudiante_libro');
 
 $conexion -> query('delete from libro');
 $conexion -> query('delete from estudiante');

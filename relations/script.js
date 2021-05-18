@@ -1,3 +1,27 @@
+let e_a = document.getElementById("estudiante-asistencia");
+let e_c = document.getElementById("estudiante-curso");
+let e_l = document.getElementById("estudiante-libro");
+let background = document.getElementById("body")
+
+/* function shadeBackground() {
+    background.classList.add('shaded_background');
+}
+*/
+function hovering(item) {
+    item.addEventListener('mouseenter', () => {
+        background.classList.add('shaded_background');
+    });
+
+    item.addEventListener('mouseleave', () => {
+        background.classList.remove('shaded_background');
+    })
+}
+
+hovering(e_a);
+hovering(e_c);
+hovering(e_l);
+
+
 /*
 
 const h = document.getElementById('header');

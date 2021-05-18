@@ -16,9 +16,35 @@
     </header>
 
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-        <input type="number" placeholder="DNI" name="" class="input-yellow-1" required>
-        <input type="" placeholder="# de libro" name="" class="input-yellow-1" required>
-        <input type="submit" value="Enviar" class="submit">
+        <input type="number" placeholder="DNI" name="dni" class="input-yellow-1" required>
+        <input type="number" placeholder="# de libro" name="id-libro" class="input-yellow-1" required>
+        <input type="number" placeholder="Deuda del estudiante" name="deuda" class="input-yellow-1" required>
+        <input type="submit" value="Enviar" name='submit' class="submit">
     </form>
+
+    <?php
+
+    require './logic/estudiante-libro-logic.php';
+
+    if ($_POST['deuda'] < 5) {
+        if ($_POST['submit']) {
+            if (comprobacionEnvioCustom() && checkType($_POST['dni'], 'string') && checkType($_POST['id-libro'], 'string') && checkType($_POST['deuda'], 'string')) {
+                sanitizeText($_POST['dni']);
+                sanitizeText($_POST['id-libro']);
+                sanitizeText($_POST['deuda']);
+                envio_datos($conexion);
+
+                if ($validation) {
+                   echo $valid;
+            }   else {
+                    echo $invalid;
+            } 
+            }
+        }
+    } else {
+        echo '<h2>La deuda del estudiante es muy alta. Devuelva un libro</h2>';
+    }
+
+    ?>
 </body>
 </html>

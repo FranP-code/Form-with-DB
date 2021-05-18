@@ -139,9 +139,9 @@ function generarLibros($cantidad) {
             if (in_array($title, $titleHistory) || in_array($idL, $idLHistory) ) {
 
             } else {
-                introducirLibroBD($conexion, $idL, $title, $amount);    
+                introducirLibroBD($conexion, $i, $title, $amount);    
                 array_push($titleHistory, $title);
-                array_push($idLHistory, $idL);
+                array_push($idLHistory, $i);
                 $i++;
                 }
             }

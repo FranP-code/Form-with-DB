@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relación MODIFICAR TITULO</title>
+    <title>Relación Estudiante-Curso</title>
     <link rel="stylesheet" href="./relations.css">
     <link rel="stylesheet" href="../normalize.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -16,8 +16,8 @@
     </header>
 
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-        <input type="number" placeholder="DNI" name="" class="input-green-1" required>
-        <select name="" class="input-green-1" required>
+        <input name="dni" type="number" placeholder="DNI"  class="input-green-1" required>
+        <select name="curso" class="input-green-1" required>
             <option value="">Seleccione una opción</option>    
             <?php
 
@@ -73,8 +73,24 @@
 
     ?>
         </select>
-        <input type="submit" value="Enviar" class="submit">
+        <input type="submit" value="Enviar" name='submit' class="submit">
     </form>
+    
+    <?php
 
+    require './logic/estudiante-curso-logic.php';
+
+        if ($_POST['submit']) {
+            if (comprobacionEnvioCustom() && checkType($_POST['dni'], 'string') && checkType($_POST['curso'], 'string')) {
+                echo $valid;
+                sanitizeText($_POST['dni']);
+                sanitizeText($_POST['curso']);
+                envio_datos($conexion);
+            } else {
+                echo $invalid;
+            }
+        }
+
+    ?>
 </body>
 </html>

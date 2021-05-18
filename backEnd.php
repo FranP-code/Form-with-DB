@@ -1,6 +1,6 @@
 <?php
 
-error_reporting(0);
+// error_reporting(0);
 
 function comprobacionEnvio($a) {
     if (isset($a)) {
@@ -43,11 +43,13 @@ function notDefault($a) {
 
 function sanitizeText($a) {
     $b = filter_var($a, FILTER_SANITIZE_STRING);
+    $b = htmlspecialchars($a);
     return $b;
 }
 
 function sanitizeNumbers($a) {
     $b = filter_var($a,  FILTER_SANITIZE_NUMBER_INT);
+    return $b;
 }
 
 function checkType ($data, $type) {

@@ -1,5 +1,19 @@
 body {
     background-color: #345ca5;
+    transition: 0.3s ease-in-out background-color;
+    -webkit-transition: 0.3s ease-in-out background-color;
+    -moz-transition: 0.3s ease-in-out background-color;
+    -ms-transition: 0.3s ease-in-out background-color;
+    -o-transition: 0.3s ease-in-out background-color;
+}
+
+.shaded_background {
+    background-color: #213b6b;
+    transition: 0.3s ease-in-out background-color;
+    -webkit-transition: 0.3s ease-in-out background-color;
+    -moz-transition: 0.3s ease-in-out background-color;
+    -ms-transition: 0.3s ease-in-out background-color;
+    -o-transition: 0.3s ease-in-out background-color;
 }
 
 
@@ -130,3 +144,12 @@ h2 {
     margin-right: 20px; margin-left : 20px;
     text-decoration: none;
 }
+
+.valid {
+    color: #16ff0e;
+}
+
+.invalid {
+    color:#e2500d;
+}
+

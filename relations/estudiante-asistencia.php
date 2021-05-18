@@ -16,17 +16,35 @@
     </header>
 
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-        <input type="number" placeholder="DNI" name="" class="input-blue-1" required>
-        <input type="date" placeholder="Día" name="" class="input-blue-1" required>
-        <select name="" class="input-blue-1" required>
+        <input type="number" placeholder="DNI" name="dni" class="input-blue-1" required>
+        <input type="date" placeholder="Día" name="day" class="input-blue-1" required>
+        <select name="presence" class="input-blue-1" required>
             <option value="">Seleccione una opción</option>
             <option value="1">Presente</option>
             <option value="0">Ausente</option>
         </select>
-        <input type="submit" value="Enviar" class="submit">
+        <input type="submit" value="Enviar" name='submit' class="submit">
     </form>
 
-    <button>Asistencia en masa</button>
 </body>
+
+<?php
+
+require './logic/estudiante-asistencia-logic.php';
+
+if ($_POST['submit']) {
+    if (comprobacionEnvioCustom() && checkType($_POST['dni'], 'string') && checkType($_POST['day'], 'string') && checkType($_POST['presence'], 'string')) {
+        echo $valid;
+        sanitizeText($_POST['dni']);
+        sanitizeText($_POST['day']);
+        sanitizeText($_POST['presence']);
+        envio_datos($conexion);
+    } else {
+        echo $invalid;
+    }
+}
+
+?>
+
 </html>
 <script src="./script.js"></script>
